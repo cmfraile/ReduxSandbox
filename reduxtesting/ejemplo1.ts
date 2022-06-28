@@ -2,19 +2,29 @@ import { createSlice , configureStore , ConfigureStoreOptions } from "@reduxjs/t
 
 const counterSlice = createSlice({
     name:'counter',
-    initialState:{value:0,zapatillas:'bonitas'},
+    initialState:{value:0},
     reducers:{
         incremented:state => {state.value++},
         decremented:state => {state.value--}
     }
 });
 
+const zapasSlice = createSlice({
+    name:'zapas',
+    initialState:{bonitas:true},
+    reducers:{
+        cambio:state => {state.bonitas = !state.bonitas}
+    }
+});
+
 export const ejemplo1main = () => {
-    const { incremented , decremented } = counterSlice.actions;
-    const store = configureStore({reducer:counterSlice.reducer});
+    const { incremented , decremented } = counterSlice.actions ; const zapacambio = zapasSlice.actions.cambio;
+    const options = {reducer:{contador:counterSlice.reducer,zapas:zapasSlice.reducer}};
+    const store = configureStore(options);
     store.subscribe(() => {console.log(store.getState())});
     store.dispatch(incremented());
     store.dispatch(decremented());
+    store.dispatch(zapacambio());
 }
 
 /* CONCEPTOS IMPORTANTES:
