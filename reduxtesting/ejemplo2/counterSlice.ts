@@ -8,15 +8,31 @@ const counterSlice = createSlice({
     reducers:{
         incremented:state => {state.value++},
         decremented:state => {state.value--},
-        incdecbyamount : (state,action) => { state.value += action.payload }
+        cba:(state,action) => {state.value += action.payload} 
     }
 });
 
-export const incasync = (amount:any) => (dispatch:any) => {setTimeout(() => {dispatch(incdecbyamount(amount))},1000)};
-export const { incremented , decremented , incdecbyamount } = counterSlice.actions;
-export const selectorCount = (state:any) => state.counter.value;
+const zapasSlice = createSlice({
+    name:'zapatillas',
+    initialState:{bonitas:false},
+    reducers:{cambio:state => {state.bonitas = !state.bonitas}}
+});
 
-export default counterSlice.reducer;
+export const ex2reduceobj = {
+    inc : counterSlice.actions.incremented(),
+    dec : counterSlice.actions.decremented(),
+    cba : (amount:any) => (dispatch:any) => {
+        setTimeout(() => dispatch(counterSlice.actions.cba()))
+    },
+    cambio : zapasSlice.actions.cambio(),
+    consola : () => {console.log(zapasSlice.actions.cambio())}
+}
 
+export const csex2 = configureStore({
+    reducer : {
+        counter : counterSlice.reducer,
+        zapas : zapasSlice.reducer
+    }
+});
 
 

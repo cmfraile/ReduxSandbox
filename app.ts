@@ -1,4 +1,5 @@
-import { ejemplo1main } from './reduxtesting/ejemplo1';
+import { ex1main } from './reduxtesting/ejemplo1';
+import { ex2main } from './reduxtesting/ejemplo2/ex2index';
 console.clear();
 
 /* EJEMPLO DE REDUCE EN ARRAY
@@ -9,6 +10,7 @@ console.log(final);
 */
 
 //EJEMPLO 1 - Introducción
-ejemplo1main();
+//ex1main();
+ex2main();
 
 

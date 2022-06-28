@@ -17,7 +17,7 @@ const zapasSlice = createSlice({
     }
 });
 
-export const ejemplo1main = () => {
+export const ex1main = () => {
     const { incremented , decremented } = counterSlice.actions ; const zapacambio = zapasSlice.actions.cambio;
     const options = {reducer:{contador:counterSlice.reducer,zapas:zapasSlice.reducer}};
     const store = configureStore(options);
