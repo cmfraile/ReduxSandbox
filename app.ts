@@ -1,5 +1,5 @@
-import { ex1main } from './reduxtesting/ejemplo1';
-import { ex2main } from './reduxtesting/ejemplo2/ex2index';
+import { ex1main } from './reduxtesting/essentials/parte1';
+import { ex2main } from './reduxtesting/essentials/parte2';
 console.clear();
 
 /* EJEMPLO DE REDUCE EN ARRAY
