@@ -9,6 +9,6 @@ console.log(final);
 */
 
 //EJEMPLO 1 - Introducción
-//ejemplo1main();
+ejemplo1main();
 
 
