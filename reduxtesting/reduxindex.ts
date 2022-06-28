@@ -2,7 +2,7 @@ import { createSlice , configureStore , ConfigureStoreOptions } from "@reduxjs/t
 
 const counterSlice = createSlice({
     name:'counter',
-    initialState:{value:0},
+    initialState:{value:0,zapatillas:'bonitas'},
     reducers:{
         incremented:state => {state.value++},
         decremented:state => {state.value--}
